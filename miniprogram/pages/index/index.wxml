@@ -1,0 +1,56 @@
+<view class="container">
+
+  <view class="card">
+    <view class="card-top">
+      <text class="title">{{list[n].title}}</text>
+    </view>
+    <view class="card-bottom">
+      <image src="{{list[n].img}}" class="bg" />
+      <view class="msgbox">
+        <text class="msg">{{list[n].msg}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="opbar">
+
+    <view class="imgbox">
+      <view class="opborder" bindtap='edit'>
+        <image class="opicons" src="../../icons/edit.png" />
+      </view>
+    </view>
+
+    <view class="imgbox">
+      <view class="opborder" bindtap="delcard">
+        <image class="opicons" src="../../icons/delete.png" />
+      </view>
+    </view>
+
+    <view class="imgbox">
+      <view class="opborder" bindtap="nextcard">
+        <image class="opicons" src="../../icons/next.png" />
+      </view>
+    </view>
+  </view>
+
+  <view class="add {{showToolbar ? 'active' : '' }}">
+
+    <view class="add-item" data-type="0">
+      <text class="add-item-txt">管理</text>
+    </view>
+
+    <view class="add-item" bindtap="onAdd" data-type="0">
+      <text class="add-item-txt">添加</text>
+    </view>
+
+    <view class="add-item" data-type="0">
+      <text class="add-item-txt">卡包</text>
+    </view>
+
+    <view class="add-icon" bindtap="onToggle">
+      <text class="add-icon-txt">{{showToolbar ? '×' : '+'}}</text>
+    </view>
+
+  </view>
+</view>

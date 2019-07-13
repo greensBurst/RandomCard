@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="cardimg">
+    <!-- <view class="defaultimg" bindtap='uploadImg' wx:if="{{ishow}}">
+      <text class="addicon">+</text>
+      <text>点击上传图片</text>
+    </view>
+    <image wx:else src="{{card.img}}" class="showimg"/> -->
+
+    <view class="defaultimg" wx:if="{{ishow}}">
+      <image src="{{currentCard[n].img}}" class="oldcard"></image>
+    </view>
+    <view class="cover" wx:if="{{ishow}}" bindtap='uploadImg'>
+      <text class="addicon">+</text>
+      <text>点击更换图片</text>
+    </view>
+    <image wx:if="{{!ishow}}" src="{{card.img}}" class="showimg"/>
+  </view>
+  <input placeholder="标题" value="{{currentCard[n].title}}" placeholder-style='gray' class="cardtitle" bindinput='onInput' />
+  <textarea class="cardmsg" placeholder='添加卡片详细信息' value="{{currentCard[n].msg}}" bindinput='onText'></textarea>
+  <button class="cardsave" bindtap="onSave">保存</button>
+</view>
